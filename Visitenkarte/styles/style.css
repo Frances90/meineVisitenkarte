@@ -141,7 +141,6 @@ img{
 
 #more_info_design{
     background-color: var(--white_grey);
-    color: var(--blue);
     padding: 10px 10px;
     text-align: center;
     letter-spacing: 1px;
@@ -152,4 +151,10 @@ img{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
    
+}
+
+#more_info_design a{
+    color: var(--blue);
+    text-align: center;
+    text-decoration: none;
 }
