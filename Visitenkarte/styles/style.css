@@ -1,17 +1,33 @@
 @import url('colors.css');
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat_bold';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Montserrat';
     margin: 0px;
     padding: 0px;
 
 }
+#small_container{
+        display: none;
+    } 
 .flex_container{
     display: flex;
     flex-direction: row; /* Elemente werden horizontal angeordnet */
     justify-content: flex-start;
     align-items: center; /* Elemente werden vertikal zentriert */
-    min-height: 100vh;
+    height: 100%;
 }
 /* Design auf der linken Seite der Visitenkarte */
 .container_left{
@@ -22,16 +38,18 @@
     background-color: var(--blue_transparent_container);
     color: var(--text_white);
     flex-grow: 1;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 50vh; 
     gap: 30px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-#heder_vk_left{
+#header_vk_left{
     font-size: 60px;
     font-weight: 400;
+    font-family: 'Montserrat_bold';
 }
 
 #sub_header_vk_left{
@@ -97,6 +115,7 @@ img{
 #heder_vk_right{
     font-size: 60px;
     font-weight: 400;
+    font-family: 'Montserrat_bold';
 }
 
 #sub_header_vk_right{
@@ -115,8 +134,12 @@ img{
 
 #more_info_vk_right ul{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
+    margin-top: 20px;
+    padding-right: 30px;
     gap: 20px;
 }
 
@@ -157,4 +180,89 @@ img{
     color: var(--blue);
     text-align: center;
     text-decoration: none;
+}
+
+@media (max-width: 319px) {
+    #small_container{
+        background-color: var(--grey_blue_transparent_container);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items:center ;
+        padding: 10px;
+        font-size: 10px;
+    }
+    .flex_container{
+        display: none
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width:600px){
+    #header_vk_left, #sub_header_vk_left, #description_vk_left{
+        display: none;
+    }
+   .container_left, #small_container{
+        display: none;
+    } 
+
+    .container_right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-top: 20px;
+    }
+    #img_vk_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        border: 20px solid var(--grey_blue_transparent_container);
+        border-radius: 50%;
+        object-fit: cover;
+        width: 50%;
+    }
+
+    #heder_vk_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+    
+    #sub_header_vk_right{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #description_vk_right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+
+    }
+
+    #more_info_vk_right ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    
+    #more_info_vk_right{
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
 }
