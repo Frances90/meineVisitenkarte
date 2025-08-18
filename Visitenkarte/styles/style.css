@@ -182,7 +182,7 @@ img{
     text-decoration: none;
 }
 
-@media (max-width: 319px) {
+@media (max-width: 319px) or (max-height:319px){
     #small_container{
         background-color: var(--grey_blue_transparent_container);
         width: 100vw;
@@ -199,10 +199,11 @@ img{
     
 }
 
-@media (min-width: 320px) and (max-width:600px){
+@media (min-width: 320px) and (max-width:600px) and (orientation: portrait){
     #header_vk_left, #sub_header_vk_left, #description_vk_left{
         display: none;
     }
+
    .container_left, #small_container{
         display: none;
     } 
@@ -265,4 +266,77 @@ img{
         font-size: 10px;
         margin-bottom: 20px;
     }
+}
+
+@media (min-height: 320px) and (max-height:600px) and (orientation: landscape){
+    
+    #header_vk_left, #sub_header_vk_left, #description_vk_left{
+        display: none;
+    }
+
+   .container_left, #small_container{
+        display: none;
+    } 
+
+    .container_right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        height: auto;
+        margin-top: 10px
+    }
+
+    #img_vk_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        border: 20px solid var(--grey_blue_transparent_container);
+        border-radius: 50%;
+        object-fit: cover;
+        width: 50%;
+    }
+
+    #heder_vk_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+    
+    #sub_header_vk_right{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #description_vk_right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+
+    }
+
+    #more_info_vk_right ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    
+    #more_info_vk_right{
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
 }
